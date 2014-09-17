@@ -152,7 +152,7 @@ public final class KennitalaUtil {
     public static int age(final String kennitala) {
         final String kennitalaClean = cleanKennitala(kennitala);
 
-        if (!KennitalaValidator.isValid(kennitala)) {
+        if (!KennitalaValidator.isValid(kennitalaClean)) {
             return 0;
         }
         // Parse the kennitala for the day, month and year it is born.
