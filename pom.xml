@@ -7,6 +7,23 @@
     <groupId>net.hilmarh</groupId>
     <artifactId>kennitala</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>java-kennitala</name>
+    <description>Validation and generation library for the Icelandic Kennitala</description>
+    <url>https://github.com/hilmarh/java-kennitala</url>
+
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>http://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/hilmarh/java-kennitala</url>
+    </scm>
 
     <dependencies>
         <dependency>
