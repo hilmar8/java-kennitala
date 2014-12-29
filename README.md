@@ -5,7 +5,11 @@ Validation and generation library for the Icelandic Kennitala
 
 ### Maven
 ```xml
-<!-- TODO -->
+<dependency>
+  <groupId>net.hilmarh</groupId>
+  <artifactId>kennitala</artifactId>
+  <version>1.0.0</version>
+</dependency>
 ```
 
 ### Usage
