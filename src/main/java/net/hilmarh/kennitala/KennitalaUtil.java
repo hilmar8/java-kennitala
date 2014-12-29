@@ -150,6 +150,7 @@ public final class KennitalaUtil {
     /**
      * Calculate the age of a kennitala. The age will be 0 if the kennitala is invalid.
      *
+     * @param kennitala The kennitala, with or without the hyphen.
      * @return The age of a kennitala.
      */
     public static int age(final String kennitala) {
