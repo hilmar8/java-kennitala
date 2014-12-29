@@ -21,6 +21,7 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
  */
+
 package net.hilmarh.kennitala;
 
 import net.hilmarh.kennitala.validator.KennitalaValidator;
@@ -60,9 +61,9 @@ public final class KennitalaUtil {
     /**
      * Create a new legal and valid kennitala which passes the ninth letter checks.
      *
-     * @param day The day on which the person is born.
+     * @param day   The day on which the person is born.
      * @param month The month in which the person is born.
-     * @param year The year on which the person is born.
+     * @param year  The year on which the person is born.
      * @return A legal and valid kennitala which passes the ninth letter checks.
      */
     public static String fromBirthday(final int day, final int month, final int year) {
@@ -73,19 +74,20 @@ public final class KennitalaUtil {
         kennitala.append(String.format("%02d", month));
         kennitala.append(String.valueOf(year).substring(2, 4));
 
-        // Create two completely random numbers which compose the seventh and the eight letters of the kennitala.
-        kennitala.append( String.format("%02d", (((int) (Math.random() * 100)))));
+        // Create two completely random numbers which compose the seventh and the eight
+        // letters of the kennitala.
+        kennitala.append(String.format("%02d", (((int) (Math.random() * 100)))));
 
         // Create the ninth number which will be used to check if the kennitala is valid.
         final int sum =
-                (Integer.parseInt(kennitala.substring(0, 1)) * 3) +
-                        (Integer.parseInt(kennitala.substring(1, 2)) * 2) +
-                        (Integer.parseInt(kennitala.substring(2, 3)) * 7) +
-                        (Integer.parseInt(kennitala.substring(3, 4)) * 6) +
-                        (Integer.parseInt(kennitala.substring(4, 5)) * 5) +
-                        (Integer.parseInt(kennitala.substring(5, 6)) * 4) +
-                        (Integer.parseInt(kennitala.substring(6, 7)) * 3) +
-                        (Integer.parseInt(kennitala.substring(7, 8)) * 2);
+                (Integer.parseInt(kennitala.substring(0, 1)) * 3)
+                        + (Integer.parseInt(kennitala.substring(1, 2)) * 2)
+                        + (Integer.parseInt(kennitala.substring(2, 3)) * 7)
+                        + (Integer.parseInt(kennitala.substring(3, 4)) * 6)
+                        + (Integer.parseInt(kennitala.substring(4, 5)) * 5)
+                        + (Integer.parseInt(kennitala.substring(5, 6)) * 4)
+                        + (Integer.parseInt(kennitala.substring(6, 7)) * 3)
+                        + (Integer.parseInt(kennitala.substring(7, 8)) * 2);
 
         int num = 11 - (sum % 11);
         num = (num == 11) ? 0 : num;
@@ -98,8 +100,8 @@ public final class KennitalaUtil {
         // We append the ninth letter of the kennitala.
         kennitala.append(num);
 
-        // We construct the tenth letter of the kennitala. This letter tells us in which millenium this kennitala
-        // is born.
+        // We construct the tenth letter of the kennitala. This letter tells us in which
+        // millenium this kennitala is born.
         final int millenium = year / 100;
 
         switch (millenium) {
@@ -130,10 +132,12 @@ public final class KennitalaUtil {
         final Calendar gc = new GregorianCalendar();
 
         // Build a year somewhere between 1800 and the year today.
-        final int year = 1800 + ((int)Math.round(Math.random() * (gc.get(gc.YEAR) - 1800)));
+        final int year = 1800 + ((int) Math.round(Math.random() * (gc.get(gc.YEAR) - 1800)));
 
         // Build a day somewhere between 1 and 365.
-        final int day = 1 + (int)Math.round(Math.random() * (gc.getActualMaximum(gc.DAY_OF_YEAR) - 1));
+        final int day = 1
+                + (int) Math.round(Math.random()
+                * (gc.getActualMaximum(gc.DAY_OF_YEAR) - 1));
 
         // Construct a birthdate.
         gc.set(gc.YEAR, year);
@@ -144,7 +148,6 @@ public final class KennitalaUtil {
     }
 
     /**
-     *
      * Calculate the age of a kennitala. The age will be 0 if the kennitala is invalid.
      *
      * @return The age of a kennitala.

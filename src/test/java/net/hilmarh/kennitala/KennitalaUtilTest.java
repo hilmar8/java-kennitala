@@ -23,12 +23,13 @@
  */
 package net.hilmarh.kennitala;
 
-import junit.framework.TestCase;
 import net.hilmarh.kennitala.validator.KennitalaValidator;
 import org.junit.Test;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
+import static org.junit.Assert.*;
 
 /**
  * Tests for Kennitala.
@@ -37,7 +38,7 @@ import java.util.GregorianCalendar;
  * @version 1.0
  * @since 1.0
  */
-public class KennitalaUtilTest extends TestCase {
+public class KennitalaUtilTest {
     @Test
     public void testCleanKennitala() throws Exception {
         String kennitala;

@@ -23,11 +23,12 @@
  */
 package net.hilmarh.kennitala.validator;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.Assert.*;
 
 /**
  * Tests for KennitalaValidator.
@@ -36,7 +37,7 @@ import java.util.Map;
  * @version 1.0
  * @since 1.0
  */
-public class KennitalaValidatorTest extends TestCase {
+public class KennitalaValidatorTest {
     @Test
     public void testIsValid() throws Exception {
         final Map<String, Boolean> kennitalaMap = new HashMap<String, Boolean>();
@@ -58,7 +59,21 @@ public class KennitalaValidatorTest extends TestCase {
             assertEquals(
                     "Kennitala was valid or invalid but was reported to be the opposite.",
                     KennitalaValidator.isValid(booleanEntry.getKey()),
-                    booleanEntry.getValue().booleanValue());
+                    booleanEntry.getValue());
+        }
+    }
+
+    @Test
+    public void testIsCompany() throws Exception {
+        final Map<String, Boolean> kennitalaMap = new HashMap<String, Boolean>();
+        kennitalaMap.put("5810080150", true);
+        kennitalaMap.put("1405433229", false);
+
+        for (Map.Entry<String, Boolean> booleanEntry : kennitalaMap.entrySet()) {
+            assertEquals(
+                    "Kennitala was a company or wasn't but was reported to be the opposite.",
+                    KennitalaValidator.isCompany(booleanEntry.getKey()),
+                    booleanEntry.getValue());
         }
     }
 }
