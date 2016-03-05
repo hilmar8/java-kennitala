@@ -45,5 +45,5 @@ String kennitala = KennitalaUtil.fromBirthday(1, 2, 1982); // dd MM yyyy
 ```
 
 ## License
-Copyright (c) 2014 hilmarh
+Copyright (c) 2016 hilmarh
 Licensed under the MIT license.
